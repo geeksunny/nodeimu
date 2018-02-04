@@ -63,9 +63,11 @@ void PutMeasurement(const RTIMU_DATA& imuData, const bool pressure, const bool h
 	if (pressure) {
 		Nan::Set(result, Nan::New("pressure").ToLocalChecked(), Nan::New(imuData.pressure));
 		Nan::Set(result, Nan::New("temperature").ToLocalChecked(), Nan::New(imuData.temperature));
+		Nan::Set(result, Nan::New("temperatureFromPressure").ToLocalChecked(), Nan::New(imuData.temperatureFromPressure));
 	}
 	if (humidity) {
 		Nan::Set(result, Nan::New("humidity").ToLocalChecked(), Nan::New(imuData.humidity));
+		Nan::Set(result, Nan::New("temperatureFromHumidity").ToLocalChecked(), Nan::New(imuData.temperatureFromHumidity));
 	}
 }
 
