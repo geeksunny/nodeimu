@@ -10,8 +10,7 @@ NodeIMU::NodeIMU() {
 	humidity = RTHumidity::createHumidity(settings);
 
     if ((imu == NULL) || (imu->IMUType() == RTIMU_TYPE_NULL)) {
-        printf("No IMU found\n");
-        exit(1);
+        Nan::ThrowError("No IMU found.");
     }	
 	
     imu->IMUInit();
